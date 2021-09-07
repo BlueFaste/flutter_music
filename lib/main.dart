@@ -109,16 +109,110 @@ class HeaderSection extends StatelessWidget{
     );
   }
 }
-class PlaylistSection extends StatelessWidget{
+
+class PlaylistSection extends StatelessWidget {
+  final List playList = [
+    {
+      'title': '7 rings',
+      'duration': '2:56',
+      'played': false,
+    },
+    {
+      'title': 'Save yours tears',
+      'duration': '3:11',
+      'played': true,
+    },
+    {
+      'title': 'Positions',
+      'duration': '2:52',
+      'played': false,
+    },
+    {
+      'title': 'Rain on me',
+      'duration': '3:02',
+      'played': false,
+    },
+    {
+      'title': 'Side to side',
+      'duration': '3:46',
+      'played': false,
+    },
+  ];
+
   @override
-  Widget build(BuildContext context){
-    return  Container(
+  Widget build(BuildContext context) {
+    return Container(
       padding: EdgeInsets.fromLTRB(30, 40, 20, 20),
       child: Column(
         children: [
-
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Popular',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(right: 10),
+                child: Text(
+                  'Show All',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.blue,
+                  ),
+                ),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Column(
+            children: playList.map((song) {
+              return Container(
+                height: 70,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      song['title'],
+                      style: TextStyle(
+                        color: song['played'] ? Colors.blue : Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          song['duration'],
+                          style: TextStyle(
+                            color: song['played'] ? Colors.blue : Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Icon(
+                          Icons.more_vert,
+                          color: song['played'] ? Colors.blue : Colors.grey,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              );
+            }).toList(),
+          ),
         ],
       ),
     );
   }
 }
+
