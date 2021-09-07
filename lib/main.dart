@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget{
           ],
         ),
       ),
+      bottomNavigationBar: BottomSection(),
     );
   }
 }
@@ -216,3 +217,40 @@ class PlaylistSection extends StatelessWidget {
   }
 }
 
+class BottomSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      backgroundColor: Colors.blue,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.pause,
+            color: Colors.white,
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Text(
+            "Save yours tears - Ariana Grande",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 13,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.arrow_circle_up,
+            color: Colors.white,
+          ),
+          label: '',
+        ),
+      ],
+    );
+  }
+}
