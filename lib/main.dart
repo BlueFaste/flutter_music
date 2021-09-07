@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,7 +8,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Music Player',
@@ -16,17 +17,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatelessWidget {
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
       extendBodyBehindAppBar: true,
       appBar: MyAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-           HeaderSection(),
+            HeaderSection(),
             PlaylistSection(),
           ],
         ),
@@ -36,38 +36,42 @@ class HomePage extends StatelessWidget{
   }
 }
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => new Size.fromHeight(60);
+
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: Colors.white.withOpacity(0),
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-          onPressed: null,
+      backgroundColor: Colors.white.withOpacity(0),
+      elevation: 0,
+      leading: IconButton(
+        icon: Icon(
+          Icons.menu,
+          color: Colors.white,
         ),
-        actions: [IconButton(
+        onPressed: null,
+      ),
+      actions: [
+        IconButton(
           icon: Icon(
             Icons.more_vert,
             color: Colors.white,
           ),
           onPressed: null,
-        ),],
-      );
+        ),
+      ],
+    );
   }
 }
 
-class HeaderSection extends StatelessWidget{
+class HeaderSection extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
-    return  Container(
-      height: 500,
+  Widget build(BuildContext context) {
+    return Container(
+      height: 350,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/ariana.jpg'),
+        image: DecorationImage(
+          image: AssetImage('assets/images/ariana.jpg'),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.only(
@@ -77,16 +81,15 @@ class HeaderSection extends StatelessWidget{
       child: Stack(
         children: [
           Positioned(
-              left: 20,
-              bottom: 30,
-              child: Text(
-                'Ariana Grande',
-                style: GoogleFonts.arizonia(
+            left: 20,
+            bottom: 30,
+            child: Text(
+              'Ariana Grande',
+              style: GoogleFonts.arizonia(
                   color: Colors.white,
                   fontSize: 43,
-                  fontWeight: FontWeight.w800
-                ),
-              ),
+                  fontWeight: FontWeight.w800),
+            ),
           ),
           Positioned(
             right: 0,
@@ -98,9 +101,9 @@ class HeaderSection extends StatelessWidget{
               child: Padding(
                 padding: EdgeInsets.all(17),
                 child: Icon(
-                    Icons.play_arrow_rounded,
-                    color: Colors.white,
-                    size: 30,
+                  Icons.play_arrow_rounded,
+                  color: Colors.white,
+                  size: 30,
                 ),
               ),
             ),
