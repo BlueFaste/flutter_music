@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'player_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,7 +69,7 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 350,
+      height: 400,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/images/ariana.jpg'),
@@ -95,7 +96,14 @@ class HeaderSection extends StatelessWidget {
             right: 0,
             bottom: 20,
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PlayerPage(),
+                    ),
+                );
+              },
               color: Colors.blue,
               shape: CircleBorder(),
               child: Padding(
