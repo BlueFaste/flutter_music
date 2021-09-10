@@ -98,10 +98,10 @@ class HeaderSection extends StatelessWidget {
             child: MaterialButton(
               onPressed: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => PlayerPage(),
-                    ),
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PlayerPage(),
+                  ),
                 );
               },
               color: Colors.blue,

@@ -26,8 +26,9 @@ class PlayerPage extends StatelessWidget {
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => new Size.fromHeight(60);
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white.withOpacity(0),
       elevation: 0,
@@ -44,20 +45,21 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(""),
       actions: [
         IconButton(
-            onPressed: null,
-            icon: Icon(
-              Icons.more_vert,
-              size: 23,
-              color: Colors.white,
-            ))
+          onPressed: null,
+          icon: Icon(
+            Icons.more_vert,
+            size: 23,
+            color: Colors.white,
+          ),
+        ),
       ],
     );
   }
 }
 
-class ImageAuthor extends StatelessWidget{
+class ImageAuthor extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints.expand(
         height: 550.0,
@@ -66,23 +68,25 @@ class ImageAuthor extends StatelessWidget{
         image: DecorationImage(
           image: AssetImage('assets/images/ariana.jpg'),
           fit: BoxFit.cover,
-        )
+        ),
       ),
-      child: Stack(children: [
-        Positioned(
+      child: Stack(
+        children: [
+          Positioned(
             top: 60.0,
             left: 130,
             child: TitleSection(),
-        ),
-        ArtistPictureSection(),
-      ],),
+          ),
+          ArtistPictureSection(),
+        ],
+      ),
     );
   }
 }
 
 class TitleSection extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       height: 100,
       child: Column(
@@ -99,10 +103,9 @@ class TitleSection extends StatelessWidget {
           Text(
             'Ariana Grande',
             style: GoogleFonts.lato(
-              fontWeight: FontWeight.w800,
-              fontSize: 17.0,
-              color: Colors.white
-            )
+                fontWeight: FontWeight.w800,
+                fontSize: 17.0,
+                color: Colors.white),
           ),
         ],
       ),
@@ -112,7 +115,7 @@ class TitleSection extends StatelessWidget {
 
 class ArtistPictureSection extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       height: 350,
       margin: EdgeInsets.only(top: 200),
@@ -120,7 +123,7 @@ class ArtistPictureSection extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(50),
-        )
+        ),
       ),
       child: Stack(
         alignment: Alignment.center,
@@ -132,30 +135,25 @@ class ArtistPictureSection extends StatelessWidget {
               width: 300,
               decoration: BoxDecoration(
                 color: Colors.grey[350],
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(50)
-                )
+                borderRadius: BorderRadius.only(topRight: Radius.circular(50)),
               ),
             ),
           ),
           Positioned(
-              top: 50.0,
-              child: Container(
-                height: 275,
-                width: 250,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/ariana.jpg'),
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(
-                      Colors.blue.withOpacity(0.5), BlendMode.darken
-                    ),
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(50)
-                  )
+            top: 50.0,
+            child: Container(
+              height: 275,
+              width: 250,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/ariana.jpg'),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                      Colors.blue.withOpacity(0.5), BlendMode.darken),
                 ),
+                borderRadius: BorderRadius.only(topRight: Radius.circular(50)),
               ),
+            ),
           ),
         ],
       ),
@@ -163,11 +161,11 @@ class ArtistPictureSection extends StatelessWidget {
   }
 }
 
-class PlayerControler extends StatelessWidget{
+class PlayerControler extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top:30),
+      margin: EdgeInsets.only(top: 30),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -180,7 +178,7 @@ class PlayerControler extends StatelessWidget{
   }
 }
 
-class PlayingMusicTitle extends StatelessWidget{
+class PlayingMusicTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -195,7 +193,9 @@ class PlayingMusicTitle extends StatelessWidget{
               color: Colors.black,
             ),
           ),
-          SizedBox(width: 3,),
+          SizedBox(
+            width: 3,
+          ),
           Text(
             'Ariana Grande',
             style: GoogleFonts.lato(
@@ -210,7 +210,7 @@ class PlayingMusicTitle extends StatelessWidget{
   }
 }
 
-class MusicSliderSection extends StatelessWidget{
+class MusicSliderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -227,7 +227,7 @@ class MusicSliderSection extends StatelessWidget{
   }
 }
 
-class DurationSection extends StatelessWidget{
+class DurationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -267,31 +267,31 @@ class MusicControllerButtonSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-              onPressed: null,
-              icon: Icon(
-                Icons.shuffle,
-                color: Colors.grey,
-                size: 35,
-              ),
+            onPressed: null,
+            icon: Icon(
+              Icons.shuffle,
+              color: Colors.grey,
+              size: 35,
+            ),
           ),
           IconButton(
-              onPressed: null,
-              icon: Icon(
-                Icons.skip_previous,
+            onPressed: null,
+            icon: Icon(
+              Icons.skip_previous,
+              color: Colors.black,
+              size: 40,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Icon(
+                Icons.pause,
                 color: Colors.black,
                 size: 40,
               ),
-          ),
-          ElevatedButton(
-              onPressed: () {},
-              child: Container(
-                padding: EdgeInsets.all(10),
-                child: Icon(
-                  Icons.pause,
-                  color: Colors.black,
-                  size: 40,
-                )
-              ),
+            ),
             style: ElevatedButton.styleFrom(
               primary: Colors.white,
               shape: CircleBorder(),
@@ -309,7 +309,7 @@ class MusicControllerButtonSection extends StatelessWidget {
               size: 40,
             ),
           ),
-        IconButton(
+          IconButton(
             onPressed: null,
             icon: Icon(
               Icons.repeat,
