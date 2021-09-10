@@ -1,6 +1,17 @@
 # music
 
-A new Flutter project.
+A new Flutter project based on the [video of Driss AS](https://www.youtube.com/watch?v=yI8_kXpMeps&t=36s).
+
+#Informations
+
+This project is my first flutter project.
+I followed Driss As' video from beginning to end : [Tuto Flutter Débutant: Comment Créer Le Design D'une Application De Musique Avec Flutter](https://www.youtube.com/watch?v=yI8_kXpMeps&t=36s).
+This application is 2 page of a music player. One is the music's list and second is a management of music player;
+I develop with only stateless widget.
+I hope you will like my first application.
+Enjoy 😇
+♦
+
 
 ## Getting Started
 
