@@ -19,6 +19,7 @@ class PlayerPage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: MusicControllerButtonSection(),
     );
   }
 }
@@ -173,7 +174,6 @@ class PlayerControler extends StatelessWidget{
           PlayingMusicTitle(),
           MusicSliderSection(),
           DurationSection(),
-          MusicControllerButtonSection(),
         ],
       ),
     );
@@ -261,7 +261,7 @@ class MusicControllerButtonSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(top: 10, bottom: 15),
       padding: EdgeInsets.all(5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
